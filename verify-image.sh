@@ -1,6 +1,6 @@
 #!/bin/sh
 
-docker run -d --name test -p 8080:8080 ghcr.io/USERNAME/cubix/1/homework/app:springboot > /dev/null
+docker run -d --name test -p 8080:8080 ghcr.io/hegezs68/cubix/1/homework/app:springboot > /dev/null
 sleep 10
 curl --fail http://localhost:8080/application/test
 RESULT=$?
