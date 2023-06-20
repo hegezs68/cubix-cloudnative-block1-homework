@@ -14,7 +14,7 @@ class ApplicationControllerTest {
         ApplicationController controller = new ApplicationController();
         CubixResponse response = controller.demoMessage("");
         assertThat(response.time(), is(notNullValue()));
-        assertThat(response.message(), is("default"));
+        assertThat(response.message(), is("This is a default message"));
     }
 
     @Test
