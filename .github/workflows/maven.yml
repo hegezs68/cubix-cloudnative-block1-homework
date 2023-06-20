@@ -70,6 +70,8 @@ jobs:
         with:
            ref: ${{ github.ref }}
            path: verify-image.sh
+      - name: list
+        run: ls -la
       - name: Set script executable
         run: chmod +x verify-image.sh
       - name: Pull the Docker image
