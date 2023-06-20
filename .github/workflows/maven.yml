@@ -57,3 +57,21 @@ jobs:
     - name: Publishing the Docker image
       run: docker push ghcr.io/hegezs68/cubix/1/homework/app:springboot
 
+  verify:
+
+    runs-on: ubuntu-latest
+    needs: docker
+    permissions:
+      contents: read
+      packages: write
+
+    steps:
+      - name: Checkout file from repository
+      - uses: actions/checkout@v3
+        with:
+           ref: ${{ github.ref }}
+           path: verify-image.sh
+      - name: Pull the Docker image
+        run: docker pull ghcr.io/hegezs68/cubix/1/homework/app:springboot
+      - name: Run verify script
+        run: ./verify-image.sh
